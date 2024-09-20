@@ -1,14 +1,78 @@
 <!-- 주석 많이많이 달면 좋아요!! -->
+<!--header:웹 페이지 상단에 있는 전체적인 헤더 부분을 나타냄.v
+nav:네비게이션 링크
+main:주 콘텐츠
+section
+article:독립적으로 배포 가능하거나 재사용할 수 있는 컨텐츠를 묶는 영역
+footer
+ul:목록
+li:순서없는 리스트
+a<a-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>1주차 과제</title>
     <!-- CSS 파일 연결 -->
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="./1주차과제.css" />
+
+    <!--header 부분-->
+    <head>
+    <header class="header">
+    <h1>시연이의 Simple Blog</h1>
+    <nav>
+        <ul class="header nav ul">
+            <li class="hadear nav ul li"><a class="header nav ul li a">Home</a></li>
+            <li class="hadear nav ul li"><a class="header nav ul li a">Posts</a></li>
+            <li class="hadear nav ul li"><a class="header nav ul li a">About</a></li>
+            <li class="hadear nav ul li"><a class="header nav ul li a">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+    </head>
+
+
+    <!--body 부분-->
+    <body class="body">
+
+    <!--main 블로그 소개&포스트-->
+    <main class="main">
+        <section class="article">
+            <h2>Welcome to My Blog!</h2>
+            <a>안녕하세요! GDSC Frontend Part 멤버 강시연입니다!</a>
+        </section>
+        <section class="article">
+            <h2>블로그 포스트 #1</h2>
+            <a>업로드 일자:2024.09.20</a>
+        </section>
+        
+        <section class="article">
+            <h2>블로그 포스트#2</h2>
+            <a>업로드 일자:2024.09.20</a>
+        </section>
+
+    <!--aside 부분. 참고. 읽어보면 좋을 자료-->
+        <aside class="aside">
+`           <h2>읽어보면 좋을 자료!</h2>
+            <!--bulleted board 리스트+nav-->
+            <nav>
+            <ul>
+                <li><a href="#">자료1</a></li>
+                <li><a href="#">자료2</a></li>
+                <li><a href="#">자료3</a></li>
+            </ul>
+            </nav>
+
+        </aside>
+
+    </main>
+  
+</body>
+<!--footer-->
+<footer class="footer">
+    <a>Contact(Email):kstar1029@ewhain.net</a>
+</footer>
     
-  </body>
+
 </html>
