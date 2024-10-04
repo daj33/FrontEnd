@@ -11,7 +11,6 @@ export default function Home() {
         <div class="flex">
           <a
             role="button"
-            title="로그인"
             class="w-auto h-auto p-1 bg-red-600 text-sm text-white font-custom font-normal rounded-sm border-r-red-600]"
           >
             로그인
