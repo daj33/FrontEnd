@@ -23,7 +23,7 @@ export default function Home() {
             연말 편지 우체통
           </h2>
           <h5 className="text-[36px] text-center font-['Laundry-R']">
-            OOO님의 연말 편지 우체통으로 OO건의 편지가 도착했어요!
+            OO님의 연말 편지 우체통으로 OO건의 편지가 도착했어요!
           </h5>
         </div>
         <button className="w-[545px] h-[120px] px-[150px] py-[20px] bg-[#C73820] text-[36px] font-['Laundry-B'] text-white rounded-[15px] shadow-md">
