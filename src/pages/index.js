@@ -29,12 +29,14 @@ export default function Home() {
         <button className="w-[545px] h-[120px] px-[150px] py-[20px] bg-[#C73820] text-[36px] font-['Laundry-B'] text-white rounded-[15px] shadow-md">
           편지 쓰러 가기
         </button>
-        {MOCK_MESSAGE_LIST.map((el, idx) => (
-          <div key={idx}>
-            <MessageBox message={el.message} name={el.name} />
-          </div>
-          //key값을 기준으로 새로 랜더링한다. unique한 값으로 한다.
-        ))}
+        <div className="grid grid-flow-row grid-rows-4 gap-[50px] p-[20px] mt-[80px] ">
+          {MOCK_MESSAGE_LIST.map((el, idx) => (
+            <div key={idx}>
+              <MessageBox message={el.message} name={el.name} />
+            </div>
+            //key값을 기준으로 새로 랜더링한다. unique한 값으로 한다.
+          ))}
+        </div>
       </main>
     </>
   );
