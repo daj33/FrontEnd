@@ -5,23 +5,23 @@
 /* Global CSS 파일에 font-face 설정 */
 @font-face {
   font-family: "Saemaeul-R";
-  src: url("/public/fonts/HSSaemaeul-Regular.ttf");
+  src: url("/fonts/HSSaemaeul-Regular.ttf");
 }
 @font-face {
   font-family: "Laundry-B";
-  src: url("/public/fonts/LAUNDRY-Bold.woff");
+  src: url("/fonts/LAUNDRY-Bold.woff");
 }
 @font-face {
   font-family: "Laundry-R";
-  src: url("/public/fonts/LAUNDRY-Regular.woff");
+  src: url("/fonts/LAUNDRY-Regular.woff");
 }
 @font-face {
   font-family: "Gwangyang-B";
-  src: url("/public/fonts/GWANGYANG SUNSHINE-Bold.OTF");
+  src: url("/fonts/GWANGYANG SUNSHINE-Bold.OTF");
 }
 @font-face {
   font-family: "Gwangyang-R";
-  src: url("/public/fonts/GWANGYANG SUNSHINE-Regular.OTF");
+  src: url("/fonts/GWANGYANG SUNSHINE-Regular.OTF");
 }
 
 body {

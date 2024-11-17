@@ -15,3 +15,7 @@ module.exports = {
   },
   plugins: [],
 };
+//md: text
+//mobile: text-[20px]
+//maxMobile: text-[10px]
+//css이름으로 구현
