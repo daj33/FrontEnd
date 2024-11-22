@@ -3,7 +3,7 @@ import MsgIcon from "../../public/icons/msg.svg";
 import GoogleIcon from "../../public/icons/google.svg";
 import React from "react";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div className="flex justify-between w-full h-[120px] px-[70px] py-[25px] bg-[#C73820]">
       <div className="flex gap-[15px]">
