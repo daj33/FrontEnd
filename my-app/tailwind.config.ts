@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,8 +15,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
-//md: text
-//mobile: text-[20px]
-//maxMobile: text-[10px]
-//css이름으로 구현
+} satisfies Config;

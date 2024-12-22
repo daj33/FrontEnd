@@ -1,25 +1,36 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import MessageBox from "@/components/MessageBox";
-import { api } from "../../public/API"
+import MessageBox from "../components/MessageBox"
 
-const userName = "김기연"
-const url = `${api}message?user=${userName}`
-
+const userName = "김다지"
+const instance = axios.create({
+  baseURL: 'http://ec2-3-38-49-253.ap-northeast-2.compute.amazonaws.com:8080'
+});
+type Message = {
+    _id? : number,
+    toName : string,
+    fromName: string,
+    fromId?: number,
+    message: string|null,
+    type?: string,
+    date: string
+}
 export default function Home() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   useEffect(() => {
-    const getMessages = async () => {
-      const response = await axios.get(url)
-        .then(function (response) {
-          console.log(response);
-          setMessages(response.data);
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+    const fetchMessages = async () => {
+      try {
+        const response = await instance.get(`/messages?name=${userName}`);
+        console.log(response.status)
+        console.log(response.data);
+        const data: Message[] = response.data;
+        setMessages(data);
+      } catch (error) {
+        console.log(error);
       }
+    };
+    fetchMessages();
   }, [])
   return (
     <>
@@ -36,9 +47,8 @@ export default function Home() {
           편지 쓰러 가기
         </Link>
         <div className="grid auto-rows-auto grid-cols-4 gap-[50px] p-[20px] mt-[80px] ">
-          {messages.map((el, idx) => (
-            <MessageBox key={idx} message={el.message} name={el.name} />
-            //key값을 기준으로 새로 랜더링한다. unique한 값으로 한다.
+          {messages.map((message : Message) => (
+            <MessageBox key={message._id} contents={message.message} fromName={message.fromName} />
           ))}
         </div>
       </main>
