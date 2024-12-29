@@ -2,8 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import MessageBox from "../components/MessageBox"
-
-const userName = "김다지"
+import { Cookies } from "react-cookie";
 const instance = axios.create({
   baseURL: 'http://ec2-3-38-49-253.ap-northeast-2.compute.amazonaws.com:8080'
 });
@@ -17,11 +16,14 @@ type Message = {
     date: string
 }
 export default function Home() {
+  const cookies = new Cookies();
+  const [userName, setUserName] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   useEffect(() => {
+    if (!userName) return;
     const fetchMessages = async () => {
       try {
-        const response = await instance.get(`/messages?name=${userName}`);
+        const response = await instance.get(`/messages?name=${cookies.get('name')}`);
         console.log(response.status)
         console.log(response.data);
         const data: Message[] = response.data;
@@ -31,7 +33,7 @@ export default function Home() {
       }
     };
     fetchMessages();
-  }, [])
+  }, [userName])
   return (
     <>
       <main className="flex flex-col items-center w-full h-[100dvh] bg-[#fffbf6] ">
@@ -40,8 +42,7 @@ export default function Home() {
             연말 편지 우체통
           </h2>
           <h5 className="w-full text-[36px] text-center font-['Laundry-R']">
-            OOO님의 연말 편지 우체통으로 OO건의 편지가 도착했어요!
-          </h5>
+            {cookies.get('name')}님의 연말 편지 우체통으로 {messages.length}건의 편지가 도착했어요!</h5>
         </div>
         <Link href={'./writing'} className="px-[150px] py-[20px] bg-[#C73820] text-[36px] font-['Laundry-B'] text-white rounded-[15px] shadow-md">
           편지 쓰러 가기
